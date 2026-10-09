@@ -3,47 +3,575 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio - Alejandra Robles</title>
-  <title>alejita</title>
-  <!-- Hola soy ingeniera multimedia -->
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 80vh;
-      margin: 0;
-      background-color: #f4f6f8;
-      color: #333;
-    }
-    .card {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-      max-width: 450px;
-    }
-    h1 { margin-bottom: 0.5rem; color: #111; }
-    p { color: #666; line-height: 1.5; }
-    .badge {
-      display: inline-block;
-      padding: 0.35rem 0.75rem;
-      background: #2563eb;
-      color: white;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-  </style>
+  <title>Alejandra Robles | UI/UX Designer & Creative Developer</title>
+  <!-- Iconos gratuitos RemixIcon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="card">
-    <span class="badge">En Construcción</span>
-    <h1>¡Hola, soy Alejandra!</h1>
-    <p>Bienvenido a mi portafolio de desarrollo web.</p>
-  </div>
+
+  <!-- B1: Barra de Navegación con tu Logo AR -->
+  <header class="navbar-header">
+    <nav class="navbar glass-card">
+      <a href="#inicio" class="logo-link">
+        <img src="assets/img/logo1.png" alt="Alejandra Robles Logo" class="brand-logo">
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#inicio" class="active">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#habilidades">Skills</a></li>
+        <li><a href="#portafolio">Portafolio</a></li>
+        <li><a href="#experiencia">Trayectoria</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        <i class="ri-menu-4-line"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- B2 y B3: Hero Section + Gafete Interactivo (ID Card) -->
+ <!-- B2 y B3: Hero Section + Gafete Interactivo (Solo visible en Inicio) -->
+  <section id="inicio" class="hero-section">
+    <div class="hero-container">
+      
+      <!-- Columna Izquierda: Tu Presentación -->
+      <div class="hero-content">
+        <span class="welcome-badge">Bienvenido A Mi Portafolio</span>
+        <h1>Hola, soy <span class="gradient-text">Lizeth Alejandra Robles Colmenares</span></h1>
+        <h2 class="hero-subtitle">UI/UX Designer • Web & Mobile Developer • 3D & Creative Producer</h2>
+        
+        <p class="hero-description">
+          Estudiante de ingeniería multimedia en la universidad Simón Bolívar campus Cúcuta con experiencia y conocimiento en diseñar experiencias digitales intuitivas y estéticas en <strong>Figma</strong>, desarrollo de sitios en <strong>WordPress</strong> y código web en <strong>Visual Studio Code</strong>, creación de aplicaciones funcionales en <strong>Android Studio</strong>, modelado y animación 3D en <strong>Blender</strong> y producción audiovisual en plataformas de <strong>Adobe</strong>.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="assets/files/cv-alejandra-robles.pdf" download class="btn primary">
+            <i class="ri-download-cloud-2-line"></i> Descargar CV
+          </a>
+          <a href="https://github.com/Aleja-robles" target="_blank" class="btn secondary">
+            <i class="ri-github-fill"></i> GitHub
+          </a>
+          <a href="#portafolio" class="btn secondary">
+            <i class="ri-layout-masonry-line"></i> Ver Portafolio
+          </a>
+          <a href="#contacto" class="btn secondary">
+            <i class="ri-mail-send-line"></i> Contacto
+          </a>
+        </div>
+      </div>
+
+<!-- Columna Derecha: Escenario del Gafete -->
+      <div class="id-physics-stage" id="id-stage">
+        <canvas id="lanyard-canvas"></canvas>
+
+        <div class="id-card-3d-pivot" id="id-pivot">
+          <div class="id-card-3d-inner" id="id-card-inner">
+            
+            <!-- GANCHO REALISTA SOLDADO A LA CARTA (Se mueve y rota 100% pegado a ella) -->
+            <div class="lanyard-metal-clip">
+              <div class="clip-ring"></div>
+              <div class="clip-swivel"></div>
+              <div class="clip-strap"></div>
+            </div>
+
+            <!-- CARA FRONTAL -->
+            <div class="id-card-face id-card-front">
+              <div class="id-hole"></div>
+              <div class="id-card-header">
+                <img src="assets/img/logo1.png" alt="AR" class="id-mini-logo">
+                <span class="id-role-tag">CREATIVE PASS</span>
+              </div>
+              <div class="id-photo-box">
+                <img src="assets/img/modelaje/LizethRobles.png" onerror="this.src='assets/img/LizethRobles.png'" alt="Alejandra Robles">
+              </div>
+              <div class="id-card-body">
+                <h3 class="id-signature">Alejandra Robles</h3>
+                <p class="id-specialty">UI/UX • Web • Mobile • 3D</p>
+                <div class="id-badges">
+                  <span>Figma</span>
+                  <span>Android</span>
+                  <span>Blender</span>
+                  <span>Adobe</span>
+                </div>
+              </div>
+              <!-- Luz dinámica: empieza en opacidad 0 (foto 100% clara) y brilla solo al moverse -->
+              <div class="id-glare" id="glare-front"></div>
+            </div>
+
+            <!-- CARA TRASERA (REVERSO) -->
+            <div class="id-card-face id-card-back">
+              <div class="id-hole"></div>
+              <div class="id-card-header">
+                <img src="assets/img/logo1.png" alt="AR" class="id-mini-logo">
+                <span class="id-role-tag">ID VERIFIED</span>
+              </div>
+              <div class="id-photo-box">
+                <img src="assets/img/logo1.png" alt="Marca Personal AR" style="object-fit:contain; padding: 1.2rem; background:#fff;">
+              </div>
+              <div class="id-card-body">
+                <h3 class="id-signature">Alejandra Robles</h3>
+                <p class="id-specialty">Ingeniera Multimedia</p>
+                <div class="id-barcode">Noveno Semestre</div>
+              </div>
+              <div class="id-glare" id="glare-back"></div>
+            </div>
+
+          </div>
+        </div>
+
+<p class="id-hint"><i class="ri-hand-coin-line"></i> Arrastra, estira y suelta la credencial libremente</p>
+      </div>
+
+    </div>
+  </section>
+<!-- ================= C1: SOBRE MÍ (ABOUT ME) ================= -->
+  <section id="sobre-mi" class="section-container">
+    <div class="section-header">
+      <span class="section-subtitle">CONÓCEME</span>
+      <h2 class="section-title">Sobre <span class="gradient-text">Mí</span></h2>
+      <p class="section-desc">Diseño, tecnología y creatividad visual unidos para crear productos digitales con identidad propia.</p>
+    </div>
+
+    <div class="about-grid">
+      <!-- Columna Izquierda: Bio + Educación -->
+      <div class="about-bio-col">
+        <div class="glass-card about-text-card">
+          <p>
+            Soy estudiante de Ingeniería y creadora digital multidisciplinaria con un fuerte enfoque en 
+            <strong>Diseño UI/UX</strong> y arquitectura de experiencias centradas en el usuario. 
+          </p>
+          <p>
+            Combino la capacidad técnica para desarrollar aplicaciones móviles funcionales en <strong>Android Studio</strong> y sitios web en <strong>WordPress / VS Code</strong>, con una sólida dirección de arte en modelado y animación 3D en <strong>Blender</strong>, edición audiovisual profesional y marketing digital.
+          </p>
+        </div>
+
+        <div class="education-list">
+          <div class="glass-card edu-card">
+            <div class="edu-icon"><i class="ri-graduation-cap-line"></i></div>
+            <div class="edu-info">
+              <h4>Facultad de Ingenierías</h4>
+              <p class="edu-place">Formación Universitaria</p>
+              <span class="edu-date">Enfoque en Desarrollo de Software, UI/UX & Productos Digitales</span>
+            </div>
+          </div>
+
+          <div class="glass-card edu-card">
+            <div class="edu-icon"><i class="ri-medal-line"></i></div>
+            <div class="edu-info">
+              <h4>Producción Creativa, 3D & Marketing</h4>
+              <p class="edu-place">Diseño Digital & Audiovisual</p>
+              <span class="edu-date">Modelado 3D, Dirección Fotográfica, Edición & Branding</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Áreas de Interés y Especialidad -->
+      <div class="about-interests-col glass-card">
+        <h3 class="interests-title"><i class="ri-sparkling-2-line"></i> ÁREAS DE ESPECIALIDAD</h3>
+        <div class="interests-list">
+          <div class="interest-item">
+            <i class="ri-layout-4-line"></i>
+            <span>Diseño UI/UX & Prototipado en Figma</span>
+          </div>
+          <div class="interest-item">
+            <i class="ri-code-s-slash-line"></i>
+            <span>Diseño & Desarrollo Web (WordPress / Código)</span>
+          </div>
+          <div class="interest-item">
+            <i class="ri-smartphone-line"></i>
+            <span>Desarrollo de Apps Móviles (Android Studio)</span>
+          </div>
+          <div class="interest-item">
+            <i class="ri-box-3-line"></i>
+            <span>Modelado y Animación 3D (Blender)</span>
+          </div>
+          <div class="interest-item">
+            <i class="ri-movie-2-line"></i>
+            <span>Producción Audiovisual, Cortometrajes & Fotografía</span>
+          </div>
+          <div class="interest-item">
+            <i class="ri-megaphone-line"></i>
+            <span>Marketing Digital, Publicidad & Modelaje Comercial</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= C2: SKILLS & HERRAMIENTAS CON FILTROS ================= -->
+  <section id="habilidades" class="section-container">
+    <div class="section-header">
+      <span class="section-subtitle">MI STACK DE TRABAJO</span>
+      <h2 class="section-title">Skills & <span class="gradient-text">Herramientas</span></h2>
+      <p class="section-desc">Plataformas, lenguajes y software creativo que domino para llevar ideas a la realidad.</p>
+    </div>
+
+    <!-- Botones de Filtro -->
+    <div class="skills-filters">
+      <button class="filter-btn active" data-filter="all">Todas</button>
+      <button class="filter-btn" data-filter="uiux-web">UI/UX & Web</button>
+      <button class="filter-btn" data-filter="mobile">Apps Móviles</button>
+      <button class="filter-btn" data-filter="3d-design">3D & Diseño Gráfico</button>
+      <button class="filter-btn" data-filter="video-foto">Video, Foto & Marketing</button>
+    </div>
+
+    <!-- Cuadrícula de Habilidades -->
+    <div class="skills-grid" id="skills-grid">
+      <!-- UI/UX & Web -->
+      <div class="glass-card skill-card" data-category="uiux-web">
+        <i class="ri-Pantone-line skill-icon"></i>
+        <h4>Figma</h4>
+        <span>UI/UX & PROTOTIPADO</span>
+      </div>
+      <div class="glass-card skill-card" data-category="uiux-web">
+        <i class="ri-wordpress-line skill-icon"></i>
+        <h4>WordPress</h4>
+        <span>CREACIÓN WEB & CMS</span>
+      </div>
+      <div class="glass-card skill-card" data-category="uiux-web">
+        <i class="ri-code-box-line skill-icon"></i>
+        <h4>VS Code</h4>
+        <span>ENTORNO DE CÓDIGO</span>
+      </div>
+      <div class="glass-card skill-card" data-category="uiux-web">
+        <i class="ri-html5-line skill-icon"></i>
+        <h4>HTML5 / CSS3 / JS</h4>
+        <span>DESARROLLO FRONTEND</span>
+      </div>
+
+      <!-- Apps Móviles -->
+      <div class="glass-card skill-card" data-category="mobile">
+        <i class="ri-android-line skill-icon"></i>
+        <h4>Android Studio</h4>
+        <span>DESARROLLO DE APPS (.APK)</span>
+      </div>
+      <div class="glass-card skill-card" data-category="mobile">
+        <i class="ri-terminal-window-line skill-icon"></i>
+        <h4>Kotlin / UI Mobile</h4>
+        <span>LÓGICA & VISTAS MÓVILES</span>
+      </div>
+
+      <!-- 3D & Diseño Gráfico -->
+      <div class="glass-card skill-card" data-category="3d-design">
+        <i class="ri-box-3-line skill-icon"></i>
+        <h4>Blender</h4>
+        <span>MODELADO Y ANIMACIÓN 3D</span>
+      </div>
+      <div class="glass-card skill-card" data-category="3d-design">
+        <i class="ri-image-edit-line skill-icon"></i>
+        <h4>Photoshop</h4>
+        <span>RETOQUE & COMPOSICIÓN</span>
+      </div>
+      <div class="glass-card skill-card" data-category="3d-design">
+        <i class="ri-pen-nib-line skill-icon"></i>
+        <h4>Illustrator</h4>
+        <span>DISEÑO VECTORIAL & FLYERS</span>
+      </div>
+      <div class="glass-card skill-card" data-category="3d-design">
+        <i class="ri-palette-line skill-icon"></i>
+        <h4>Canva</h4>
+        <span>DISEÑO PUBLICITARIO</span>
+      </div>
+
+      <!-- Video, Foto & Marketing -->
+      <div class="glass-card skill-card" data-category="video-foto">
+        <i class="ri-film-line skill-icon"></i>
+        <h4>Premiere Pro</h4>
+        <span>EDICIÓN DE VIDEO & CINE</span>
+      </div>
+      <div class="glass-card skill-card" data-category="video-foto">
+        <i class="ri-magic-line skill-icon"></i>
+        <h4>After Effects</h4>
+        <span>MOTION GRAPHICS & VFX</span>
+      </div>
+      <div class="glass-card skill-card" data-category="video-foto">
+        <i class="ri-scissors-cut-line skill-icon"></i>
+        <h4>CapCut</h4>
+        <span>CONTENIDO REELS & TIKTOK</span>
+      </div>
+      <div class="glass-card skill-card" data-category="video-foto">
+        <i class="ri-camera-lens-line skill-icon"></i>
+        <h4>Fotografía & Modelaje</h4>
+        <span>PRODUCCIÓN & DIRECCIÓN</span>
+      </div>
+    </div>
+  </section>
+  <!-- ================= D1-D4: PORTAFOLIO MULTIDISCIPLINARIO ================= -->
+  <section id="portafolio" class="section-container">
+    <div class="section-header">
+      <span class="section-subtitle">TRABAJOS SELECCIONADOS</span>
+      <h2 class="section-title">Mi <span class="gradient-text">Portafolio</span></h2>
+      <p class="section-desc">Explora mis proyectos encabezados por Diseño UI/UX, Desarrollo Web y Apps Móviles, junto a mis creaciones en 3D, Marketing y Producción Audiovisual.</p>
+    </div>
+
+    <!-- Filtros del Portafolio (Priorizando UI/UX, Web y Apps) -->
+    <div class="portfolio-filters">
+      <button class="port-filter-btn active" data-port-filter="all">Todos</button>
+      <button class="port-filter-btn" data-port-filter="uiux-web">★ UI/UX, Figma & Web</button>
+      <button class="port-filter-btn" data-port-filter="apps">Apps Android (.APK)</button>
+      <button class="port-filter-btn" data-port-filter="blender">3D & Animación (Blender)</button>
+      <button class="port-filter-btn" data-port-filter="marketing">Marketing, Flyers & Modelaje</button>
+      <button class="port-filter-btn" data-port-filter="audiovisual">Cortometraje & Fotografía</button>
+    </div>
+
+    <!-- Cuadrícula de Proyectos -->
+    <div class="projects-grid">
+
+      <!-- 1. UI/UX & FIGMA (Fuerte principal) -->
+      <article class="glass-card project-card" data-port-category="uiux-web">
+        <div class="project-preview">
+          <span class="project-badge">UI/UX & Prototipado</span>
+          <img src="assets/img/figma.jpg" alt="Diseño UI/UX en Figma" class="project-img">
+        </div>
+        <div class="project-body">
+          <h3>Plantillas & Sistemas de Diseño UI/UX</h3>
+          <p>Diseño de interfaces web y móviles centradas en la experiencia de usuario, wireframes interactivos y prototipos de alta fidelidad en Figma.</p>
+          <div class="project-tags">
+            <span>Figma</span><span>UI/UX Design</span><span>Prototyping</span>
+          </div>
+          <div class="project-actions">
+            <button class="btn primary btn-sm" onclick="openProjectModal('uiux')">
+              <i class="ri-eye-line"></i> Ver Caso de Estudio
+            </button>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- 3. ANDROID APP #1 (Con descarga APK) -->
+      <article class="glass-card project-card" data-port-category="apps">
+        <div class="project-preview">
+          <span class="project-badge">Mobile App #1</span>
+          <img src="assets/img/android_studio.jpg" alt="Aplicación Android 1" class="project-img">
+        </div>
+        <div class="project-body">
+          <h3>Aplicación Móvil Android #1</h3>
+          <p>Aplicación nativa completamente funcional creada en Android Studio, con interfaz intuitiva, navegación fluida y arquitectura optimizada.</p>
+          <div class="project-tags">
+            <span>Android Studio</span><span>UI Mobile</span><span>APK Funcional</span>
+          </div>
+          <div class="project-actions">
+            <button class="btn primary btn-sm" onclick="openProjectModal('app1')">
+              <i class="ri-eye-line"></i> Ver Capturas
+            </button>
+            <a href="assets/files/app1.apk" download class="btn secondary btn-sm">
+              <i class="ri-android-fill"></i> Descargar APK
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. ANDROID APP #2 (Con descarga APK) -->
+      <article class="glass-card project-card" data-port-category="apps">
+        <div class="project-preview">
+          <span class="project-badge">Mobile App #2</span>
+          <img src="assets/img/android_studio.jpg" alt="Aplicación Android 2" class="project-img">
+        </div>
+        <div class="project-body">
+          <h3>Aplicación Móvil Android #2</h3>
+          <p>Segunda aplicación desarrollada en Android Studio enfocada en resolver necesidades prácticas del usuario con diseño limpio y alto rendimiento.</p>
+          <div class="project-tags">
+            <span>Android Studio</span><span>Kotlin/Java</span><span>APK Funcional</span>
+          </div>
+          <div class="project-actions">
+            <button class="btn primary btn-sm" onclick="openProjectModal('app2')">
+              <i class="ri-eye-line"></i> Ver Capturas
+            </button>
+            <a href="assets/files/app2.apk" download class="btn secondary btn-sm">
+              <i class="ri-android-fill"></i> Descargar APK
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. BLENDER 3D (Con descarga .blend, .mp4 y .jpg) -->
+      <article class="glass-card project-card" data-port-category="blender">
+        <div class="project-preview">
+          <span class="project-badge">3D & Animación</span>
+          <img src="assets/img/blender.jpg" alt="Modelado y Animación Blender" class="project-img">
+        </div>
+        
+        <div class="project-body">
+          <h3>Modelado y Animación 3D en Blender</h3>
+          <p>Creación de escenarios, objetos 3D, iluminación, texturizado y animaciones renderizadas en alta calidad (.mp4, .jpg y archivos nativos .blend).</p>
+          <div class="project-tags">
+            <span>Blender 3D</span><span>Render JPG/MP4</span><span>Archivo .BLEND</span>
+          </div>
+          <div class="project-actions">
+            <button class="btn primary btn-sm" onclick="openProjectModal('blender')">
+              <i class="ri-play-circle-line"></i> Ver Renders & Video
+            </button>
+            <a href="assets/files/escena3d.blend" download class="btn secondary btn-sm">
+              <i class="ri-download-2-line"></i> .BLEND
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. MARKETING DIGITAL, FLYERS CARROZAS & MODELAJE -->
+      <article class="glass-card project-card" data-port-category="marketing">
+        <div class="project-preview">
+          <span class="project-badge">Branding & Modelaje</span>
+          <img src="assets/img/adobe.jpg" alt="Marketing Flyers y Modelaje" class="project-img">
+        </div>
+        <div class="project-body">
+          <h3>Marketing Digital, Flyers & Modelaje</h3>
+          <p>Diseño publicitario y flyers comerciales para empresa de carrozas, campañas visuales y sesiones fotográficas profesionales como modelo.</p>
+          <div class="project-tags">
+            <span>Photoshop</span><span>Illustrator</span><span>Canva</span><span>Modelaje</span>
+          </div>
+          <div class="project-actions">
+            <button class="btn primary btn-sm" onclick="openProjectModal('marketing')">
+              <i class="ri-gallery-line"></i> Ver Galería y Flyers
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. CORTOMETRAJE & DIRECCIÓN DE FOTOGRAFÍA -->
+      <article class="glass-card project-card" data-port-category="audiovisual">
+        <div class="project-preview">
+          <span class="project-badge">Cine & Fotografía</span>
+          <img src="assets/img/adobe.jpg" alt="Cortometraje y Fotografía" class="project-img">
+        </div>
+        <div class="project-body">
+          <h3>Cortometraje & Producción Fotográfica</h3>
+          <p>Participación en producción de cortometraje, edición de video y posproducción, además de captura y dirección de fotografía artística.</p>
+          <div class="project-tags">
+            <span>Premiere Pro</span><span>After Effects</span><span>CapCut</span><span>Fotografía</span>
+          </div>
+          <div class="project-actions">
+            <button class="btn primary btn-sm" onclick="openProjectModal('audiovisual')">
+              <i class="ri-film-line"></i> Ver Corto & Fotos
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= D5: VENTANA EMERGENTE DE DETALLE (MODAL COMO EN EL VIDEO) ================= -->
+  <div class="project-modal-overlay" id="project-modal">
+    <div class="project-modal-content glass-card">
+      <button class="modal-close-btn" onclick="closeProjectModal()">
+        <i class="ri-arrow-left-line"></i> Volver al Portafolio
+      </button>
+      <div id="modal-dynamic-body">
+        <!-- El contenido se carga dinámicamente con JavaScript según el proyecto seleccionado -->
+      </div>
+    </div>
+  </div>  
+  <!-- ================= E1: TRAYECTORIA / JOURNEY TIMELINE ================= -->
+  <section id="experiencia" class="section-container">
+    <div class="section-header">
+      <span class="section-subtitle">MI CAMINO PROFESIONAL</span>
+      <h2 class="section-title">Trayectoria & <span class="gradient-text">Experiencia</span></h2>
+      <p class="section-desc">Formación académica y proyectos reales en desarrollo, diseño UI/UX, 3D y producción visual.</p>
+    </div>
+
+    <div class="timeline-container">
+      <!-- Item 1 -->
+      <div class="timeline-item glass-card">
+        <span class="timeline-date">ACTUALIDAD</span>
+        <h3>UI/UX Designer & Desarrolladora Web / Mobile</h3>
+        <h4 class="timeline-place">Proyectos Independientes & Académicos</h4>
+        <p>Diseño de interfaces y prototipos en Figma, creación de sitios web en WordPress y Visual Studio Code, y desarrollo de aplicaciones nativas funcionales en Android Studio (como Kivys App).</p>
+        <div class="project-tags" style="margin-top:0.8rem; margin-bottom:0;">
+          <span>Figma</span><span>WordPress</span><span>Android Studio</span><span>VS Code</span>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="timeline-item glass-card">
+        <span class="timeline-date">MODELADO & ANIMACIÓN 3D</span>
+        <h3>Artista 3D & Rigging / Animación de Personajes</h3>
+        <h4 class="timeline-place">Proyectos en Blender</h4>
+        <p>Modelado orgánico e inorgánico, rigging facial y corporal, ciclos de caminata y secuencias de acción 3D renderizadas en video e imagen.</p>
+        <div class="project-tags" style="margin-top:0.8rem; margin-bottom:0;">
+          <span>Blender 3D</span><span>Rigging Facial</span><span>Animación</span><span>Renderizado</span>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="timeline-item glass-card">
+        <span class="timeline-date">MARKETING, FOTOGRAFÍA & CINE</span>
+        <h3>Diseñadora Publicitaria, Fotógrafa & Modelo Comercial</h3>
+        <h4 class="timeline-place">Campañas Comerciales & Cortometraje</h4>
+        <p>Diseño de flyers publicitarios para empresa de carrozas, fotografía y edición comercial (Calzado Bela, Fisioterapia, Producto), modelaje para marcas (Vestidos Jessi) y producción de cortometraje.</p>
+        <div class="project-tags" style="margin-top:0.8rem; margin-bottom:0;">
+          <span>Photoshop</span><span>Illustrator</span><span>Premiere Pro</span><span>After Effects</span><span>CapCut</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= E2: CONTACTO & FOOTER ================= -->
+  <section id="contacto" class="section-container">
+    <div class="section-header">
+      <span class="section-subtitle">HABLEMOS</span>
+      <h2 class="section-title">Conecta <span class="gradient-text">Conmigo</span></h2>
+      <p class="section-desc">¿Tienes un proyecto de UI/UX, desarrollo web/móvil o producción creativa en mente? Escríbeme.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Tarjetas de contacto directo -->
+      <div class="contact-info-col">
+        <a href="mailto:tu-correo@ejemplo.com" class="glass-card contact-card">
+          <div class="edu-icon"><i class="ri-mail-send-line"></i></div>
+          <div>
+            <h4>Correo Electrónico</h4>
+            <p>Escríbeme directamente</p>
+          </div>
+        </a>
+
+        <a href="https://github.com/Aleja-robles" target="_blank" class="glass-card contact-card">
+          <div class="edu-icon"><i class="ri-github-fill"></i></div>
+          <div>
+            <h4>GitHub</h4>
+            <p>github.com/Aleja-robles</p>
+          </div>
+        </a>
+
+        <a href="#inicio" class="glass-card contact-card">
+          <div class="edu-icon"><i class="ri-map-pin-user-line"></i></div>
+          <div>
+            <h4>Disponibilidad</h4>
+            <p>Proyectos UI/UX, Web, Apps & Digital Media</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Formulario de Contacto -->
+      <form class="glass-card contact-form" onsubmit="event.preventDefault(); alert('¡Gracias por tu mensaje! Pronto me pondré en contacto contigo.');">
+        <div class="form-group">
+          <label>Nombre completo</label>
+          <input type="text" placeholder="Tu nombre..." required>
+        </div>
+        <div class="form-group">
+          <label>Correo electrónico</label>
+          <input type="email" placeholder="tucorreo@ejemplo.com" required>
+        </div>
+        <div class="form-group">
+          <label>Mensaje o propuesta</label>
+          <textarea rows="4" placeholder="Cuéntame sobre tu proyecto o vacante..." required></textarea>
+        </div>
+        <button type="submit" class="btn primary" style="width:100%; justify-content:center;">
+          <i class="ri-send-plane-fill"></i> Enviar Mensaje
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Pie de página con tu Marca Personal -->
+  <footer class="footer glass-card">
+    <img src="assets/img/logo1.png" alt="AR Logo" class="brand-logo" style="height:40px; margin-bottom:0.5rem;">
+    <p>© 2026 <strong>Alejandra Robles</strong>. Todos los derechos reservados.</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
